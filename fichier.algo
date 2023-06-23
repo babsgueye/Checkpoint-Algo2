@@ -1,0 +1,49 @@
+PREMIERE TACHE
+
+FUNCTION dot_product(v1=arr1, v2=arr2:ARRAY_OF_REAL)
+var n=arr1.lenght;
+dot_product(v1, v2)=0;
+BEGIN
+FOR i FROM 0 TO n-1 STEP 1 DO 
+ni = arr1[i]*arr2[i];
+i = i+1;
+dot_product(v1, v2) = dot_product(v1, v2) + ni;
+END FOR
+return dot_product(v1, v2)
+END
+
+PROCEDURE SEARCH_ORTHOG((v1=arr1, v'1=arr1'), (v2=arr2, v'2=arr2')....(vn=arrn, v'n=arrn'):ARRAY_OF_REAL)
+BEGIN
+FOR i FROM 1 TO n STEP 1 DO
+dot_product(vi, v'i);
+i=i+1;
+IF (dot_product(vi, v'i) = 0) 
+return "IL y a au moins une paire de vecteurs orthgonaux";
+END IF
+ELSE return "IL n'y a pas de paire de vecteurs orthogonaux";
+END FOR 
+END
+
+DEUXIEME TACHE
+
+PROCEDURE swap(VAR xp, VAR yp: INTEGER)
+VAR
+tmp:INTEGER;
+BEGIN
+tmp=xp;
+xp=yp;
+yp=tmp;
+END
+PROCEDURE bubble_sort(VAR tab:ARRAY_OF_INTEGER)
+VAR
+i,j,n:INTEGER;
+BEGIN
+n=tab.lenght;
+FOR i FROM 0 TO n-1 STEP 1 DO
+   FOR j FROM i TO n-i-1 STEP 1 DO
+   IF(tab[j]>tab[j+1]) THEN
+   swap(tab[j], tab[j+1])
+   END IF
+   END FOR
+   END FOR
+   END
